@@ -1,0 +1,31 @@
+{
+  "name": "n-gram",
+  "main": "index.js",
+  "description": "Get n-grams from text",
+  "license": "MIT",
+  "keywords": [
+    "n",
+    "gram",
+    "n-gram",
+    "unigram",
+    "bigram",
+    "trigram"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/n-gram.git"
+  },
+  "authors": [
+    "Titus Wormer <tituswormer@gmail.com>"
+  ],
+  "ignore": [
+    ".*",
+    "*.log",
+    "*.md",
+    "component.json",
+    "package.json",
+    "coverage",
+    "node_modules",
+    "spec"
+  ]
+}
