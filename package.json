@@ -24,13 +24,13 @@
     "url": "https://github.com/wooorm/n-gram.git"
   },
   "scripts": {
-    "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports spec/n-gram.spec.js",
-    "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports spec/n-gram.spec.js",
+    "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports test.js",
+    "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports test.js",
     "lint": "npm run lint-api && npm run lint-test && npm run lint-style",
     "lint-api": "node_modules/.bin/eslint index.js --env node --env browser --rule 'quotes: [2, single], no-cond-assign: false'",
-    "lint-test": "node_modules/.bin/eslint spec/n-gram.spec.js --env node --env mocha --rule 'quotes: [2, single], no-loop-func: false'",
-    "lint-style": "node_modules/.bin/jscs index.js spec/n-gram.spec.js benchmark/index.js --reporter=inline",
-    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- spec/n-gram.spec.js",
+    "lint-test": "node_modules/.bin/eslint test.js --env node --env mocha --rule 'quotes: [2, single], no-loop-func: false'",
+    "lint-style": "node_modules/.bin/jscs index.js test.js benchmark/index.js --reporter=inline",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- test.js",
     "install-benchmark": "npm install ngram && git clone git@github.com:madbence/node-ngram.git node_modules/madbence-ngram",
     "benchmark": "node_modules/.bin/matcha",
     "make": "npm run lint && npm run coverage"

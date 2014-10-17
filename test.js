@@ -4,7 +4,7 @@
  * Module dependencies (n-gram, assert).
  */
 
-var nGram = require('..'),
+var nGram = require('./'),
     assert = require('assert');
 
 describe('n-gram()', function () {
