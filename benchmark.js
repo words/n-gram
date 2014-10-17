@@ -4,7 +4,7 @@
 
 var nGram, ngram, madbenceNgram, sentence, paragraph, article;
 
-nGram = require('..');
+nGram = require('./');
 
 try {
     madbenceNgram = require('madbence-ngram');
