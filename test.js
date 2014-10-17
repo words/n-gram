@@ -1,11 +1,18 @@
 'use strict';
 
 /**
- * Module dependencies (n-gram, assert).
+ * Dependencies
  */
 
-var nGram = require('./'),
-    assert = require('assert');
+var nGram,
+    assert;
+
+nGram = require('./');
+assert = require('assert');
+
+/**
+ * Tests.
+ */
 
 describe('n-gram()', function () {
     it('should throw when given `0`', function () {
