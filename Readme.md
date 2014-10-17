@@ -60,28 +60,29 @@ On a MacBook Air, it runs about 506,112 op/s on a ssentence.
 
 ```
                nGram -- this module
-  506,112 op/s »   bigrams on a sentence
-    1,510 op/s »   bigrams on an article
-  510,072 op/s »  trigrams on a sentence
-    2,334 op/s »  trigrams on an article
-  488,316 op/s » ten-grams on a sentence
-    2,449 op/s » ten-grams on an article
+  584,668 op/s »   bigrams on a sentence
+    4,607 op/s »   bigrams on an article
+  566,130 op/s »  trigrams on a sentence
+    4,558 op/s »  trigrams on an article
+  498,405 op/s » ten-grams on a sentence
+    4,085 op/s » ten-grams on an article
 
                madbence/ngram
-  489,850 op/s »   bigrams on a sentence
-    2,923 op/s »   bigrams on an article
-  467,247 op/s »  trigrams on a sentence
-    4,019 op/s »  trigrams on an article
-  478,506 op/s » ten-grams on a sentence
-    3,889 op/s » ten-grams on an article
+  489,280 op/s »   bigrams on a sentence
+    8,747 op/s »   bigrams on an article
+  487,999 op/s »  trigrams on a sentence
+    8,901 op/s »  trigrams on an article
+  533,071 op/s » ten-grams on a sentence
+    7,788 op/s » ten-grams on an article
 
                ngram
-  126,431 op/s »   bigrams on a sentence
-    2,614 op/s »   bigrams on an article
-  172,970 op/s »  trigrams on a sentence
-    2,912 op/s »  trigrams on an article
-  200,743 op/s » ten-grams on a sentence
-    2,927 op/s » ten-grams on an article
+  359,137 op/s »   bigrams on a sentence
+    5,634 op/s »   bigrams on an article
+  365,814 op/s »  trigrams on a sentence
+    5,186 op/s »  trigrams on an article
+  367,451 op/s » ten-grams on a sentence
+    4,781 op/s » ten-grams on an article
+
 ```
 
 ## License

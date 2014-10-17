@@ -1,16 +1,35 @@
 'use strict';
 
-/* eslint-disable no-cond-assign */
+var nGram;
 
-var nGram, ngram, madbenceNgram, sentence, paragraph, article;
+/**
+ * Dependencies.
+ */
 
 nGram = require('./');
 
+/**
+ * Optional dependencies.
+ */
+
+var exception,
+    ngram,
+    madbenceNgram;
+
 try {
     madbenceNgram = require('madbence-ngram');
+} catch (err) {
+    exception = err;
+}
+
+try {
     ngram = require('ngram').ngram;
-} catch (error) {
-    throw new Error(
+} catch (err) {
+    exception = err;
+}
+
+if (exception) {
+    console.log(
         '\u001B[0;31m' +
         'The libraries needed by this benchmark could not be found. ' +
         'Please execute:\n' +
@@ -18,6 +37,14 @@ try {
         '\u001B[0m'
     );
 }
+
+/**
+ * Fixtures.
+ */
+
+var sentence,
+    paragraph,
+    article;
 
 sentence = 'A simple sentence with some words, and such.';
 paragraph = sentence + Array(5).join(' ' + sentence);
