@@ -11,8 +11,8 @@
     "bigram",
     "trigram"
   ],
+  "repository": "wooorm/n-gram",
   "scripts": [
     "index.js"
-  ],
-  "repository": "wooorm/n-gram"
+  ]
 }

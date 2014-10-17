@@ -11,18 +11,18 @@
     "bigram",
     "trigram"
   ],
-  "devDependencies": {
-    "eslint": "^0.8.0",
-    "istanbul": "^0.3.0",
-    "jscs": "^1.5.3",
-    "matcha": "^0.5.0",
-    "mocha": "^1.20.0"
-  },
-  "author": "Titus Wormer <tituswormer@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/wooorm/n-gram.git"
   },
+  "devDependencies": {
+    "eslint": "^0.8.0",
+    "istanbul": "^0.3.0",
+    "jscs": "^1.7.0",
+    "matcha": "^0.5.0",
+    "mocha": "^1.20.0"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com>",
   "scripts": {
     "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports test.js",
     "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports test.js",
