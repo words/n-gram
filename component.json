@@ -4,6 +4,8 @@
   "description": "Get n-grams from text",
   "license": "MIT",
   "keywords": [
+    "natural",
+    "language",
     "n",
     "gram",
     "n-gram",
