@@ -1,4 +1,4 @@
-# n-gram [![Build Status](https://travis-ci.org/wooorm/n-gram.svg?branch=master)](https://travis-ci.org/wooorm/n-gram) [![Coverage Status](https://img.shields.io/coveralls/wooorm/n-gram.svg)](https://coveralls.io/r/wooorm/n-gram?branch=master)
+# n-gram [![Build Status](https://img.shields.io/travis/wooorm/n-gram.svg?style=flat)](https://travis-ci.org/wooorm/n-gram) [![Coverage Status](https://img.shields.io/coveralls/wooorm/n-gram.svg?style=flat)](https://coveralls.io/r/wooorm/n-gram?branch=master)
 
 Get [n-grams](http://en.wikipedia.org/wiki/N-gram) in JavaScript.
 
