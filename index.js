@@ -39,18 +39,21 @@ function nGram(n) {
      */
 
     return function (value) {
-        var nGrams = [],
+        var nGrams,
             index;
+
+        nGrams = [];
 
         if (value === null || value === undefined) {
             return nGrams;
         }
 
         value = String(value);
+
         index = value.length - n + 1;
 
         if (index < 1) {
-            return [];
+            return nGrams;
         }
 
         while (index--) {
