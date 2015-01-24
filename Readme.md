@@ -51,38 +51,24 @@ Shortcut for `nGram(3)`
 
 ## Benchmark
 
-```sh
-$ npm run install-benchmark # Just once of course.
-$ npm run benchmark
-```
-
-On a MacBook Air, it runs about 506,112 op/s on a ssentence.
+On a MacBook Air, it runs about 583,367 op/s on a sentence.
 
 ```
                nGram -- this module
-  584,668 op/s »   bigrams on a sentence
-    4,607 op/s »   bigrams on an article
-  566,130 op/s »  trigrams on a sentence
-    4,558 op/s »  trigrams on an article
-  498,405 op/s » ten-grams on a sentence
-    4,085 op/s » ten-grams on an article
+  583,367 op/s »   bigrams on a sentence
+    4,250 op/s »   bigrams on an article
+  566,931 op/s »  trigrams on a sentence
+    4,204 op/s »  trigrams on an article
+  542,756 op/s » ten-grams on a sentence
+    3,597 op/s » ten-grams on an article
 
                madbence/ngram
-  489,280 op/s »   bigrams on a sentence
-    8,747 op/s »   bigrams on an article
-  487,999 op/s »  trigrams on a sentence
-    8,901 op/s »  trigrams on an article
-  533,071 op/s » ten-grams on a sentence
-    7,788 op/s » ten-grams on an article
-
-               ngram
-  359,137 op/s »   bigrams on a sentence
-    5,634 op/s »   bigrams on an article
-  365,814 op/s »  trigrams on a sentence
-    5,186 op/s »  trigrams on an article
-  367,451 op/s » ten-grams on a sentence
-    4,781 op/s » ten-grams on an article
-
+  538,421 op/s »   bigrams on a sentence
+    9,842 op/s »   bigrams on an article
+  525,198 op/s »  trigrams on a sentence
+    9,253 op/s »  trigrams on an article
+  539,926 op/s » ten-grams on a sentence
+    6,403 op/s » ten-grams on an article
 ```
 
 ## License

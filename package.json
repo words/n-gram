@@ -23,10 +23,10 @@
     "istanbul": "^0.3.0",
     "jscs": "^1.0.0",
     "matcha": "^0.6.0",
-    "mocha": "^2.0.0"
+    "mocha": "^2.0.0",
+    "ngram": "madbence/node-ngram"
   },
   "scripts": {
-    "install-benchmark": "npm install ngram && git clone git@github.com:madbence/node-ngram.git node_modules/madbence-ngram",
     "benchmark": "node_modules/.bin/matcha benchmark.js",
     "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports test.js",
     "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports test.js",
