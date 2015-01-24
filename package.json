@@ -41,6 +41,9 @@
     "lint-style": "jscs --reporter inline index.js test.js benchmark.js",
     "lint": "npm run lint-api && npm run lint-test && npm run lint-benchmark && npm run lint-style",
     "make": "npm run lint && npm run test-coverage",
-    "benchmark": "matcha benchmark.js"
+    "benchmark": "matcha benchmark.js",
+    "bundle": "browserify index.js -s nGram > n-gram.js",
+    "build": "npm run bundle",
+    "prepublish": "npm run build"
   }
 }
