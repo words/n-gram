@@ -43,6 +43,7 @@
     "make": "npm run lint && npm run test-coverage",
     "benchmark": "matcha benchmark.js",
     "bundle": "browserify index.js -s nGram > n-gram.js",
+    "postbundle": "esmangle n-gram.js > n-gram.min.js",
     "build": "npm run bundle",
     "prepublish": "npm run build"
   }
