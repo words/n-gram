@@ -22,6 +22,12 @@ $ component install wooorm/n-gram
 $ bower install n-gram
 ```
 
+[Duo](http://duojs.org/#getting-started):
+
+```javascript
+var nGram = require('wooorm/n-gram');
+```
+
 ## Usage
 
 ```javascript
