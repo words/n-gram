@@ -5,8 +5,10 @@ bower_components/
 components/
 coverage/
 node_modules/
-test.js
 benchmark.js
+n-gram.js
+n-gram.min.js
+test.js
 bower.json
 component.json
 History.md
