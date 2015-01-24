@@ -1,6 +1,6 @@
 {
   "name": "n-gram",
-  "main": "index.js",
+  "main": "n-gram.js",
   "description": "Get n-grams from text",
   "license": "MIT",
   "keywords": [
