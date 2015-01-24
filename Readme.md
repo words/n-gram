@@ -76,4 +76,4 @@ On a MacBook Air, it runs about 583,367 op/s on a sentence.
 
 ## License
 
-MIT © Titus Wormer
+MIT © [Titus Wormer](http://wooorm.com)
