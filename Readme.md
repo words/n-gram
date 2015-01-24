@@ -5,23 +5,26 @@ Get [n-grams](http://en.wikipedia.org/wiki/N-gram) in JavaScript.
 ## Installation
 
 npm:
-```sh
+
+```bash
 $ npm install n-gram
 ```
 
 Component:
-```sh
+
+```bash
 $ component install wooorm/n-gram
 ```
 
 Bower:
-```sh
+
+```bash
 $ bower install n-gram
 ```
 
 ## Usage
 
-```js
+```javascript
 var nGram = require('n-gram');
 
 nGram.bigram('n-gram'); // ['n-', '-g', 'gr', 'ra', 'am']
@@ -53,7 +56,7 @@ Shortcut for `nGram(3)`
 
 On a MacBook Air, it runs about 583,367 op/s on a sentence.
 
-```
+```text
                nGram -- this module
   583,367 op/s »   bigrams on a sentence
     4,250 op/s »   bigrams on an article
