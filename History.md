@@ -1,4 +1,32 @@
 
+n.n.n / 2015-01-24
+==================
+
+  * Add UMD as an installation method in `Readme.md`
+  * Add `index.js` to bower ignore
+  * Add `n-gram.js` to bowers `main` instead of `index.js`
+  * Add `n-gram.js`, `n-gram.min.js`
+  * Add `n-gram.js`, `n-gram.min.js` to `.npmignore`
+  * Add `postbundle` npm script target to compress module
+  * Add `bundle` npm script target to browserify module
+  * Add esmangle as a dev-dependency
+  * Add browserify as a dev-dependency
+  * Update copyright notice in `LICENSE` to include 2015
+  * Add link to whole license in `Readme.md`
+  * Add Duo as an instalation method in `Readme.md`
+  * Add links to installation methods in `Readme.md`
+  * Fix incorrect executive rights on `test.js`
+  * Add link to personal website in `Readme.md`
+  * Add links to installation methods in `Readme.md`
+  * Refactor to adhere to strict jsdoc style
+  * Add jscs-jsdoc configuration to `.jscs.json`
+  * Add jscs-jsdoc as a dev-dependency
+  * Refactor npm scripts for changes in npm
+  * Refactor to simplify benchmark
+  * Update matcha
+  * Update eslint
+  * Fix multiple array creations
+
 0.1.1 / 2014-11-04
 ==================
 
