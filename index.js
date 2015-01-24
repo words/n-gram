@@ -14,7 +14,6 @@
  * @throws {Error} When `n` is not a number (incl. NaN), Infinity, or lt 1.
  * @return {Function} A function creating n-grams from a given value.
  */
-
 function nGram(n) {
     if (
         typeof n !== 'number' ||
@@ -27,7 +26,7 @@ function nGram(n) {
         );
     }
 
-    /**
+    /*
      * Create n-grams from a given value.
      *
      * @example
@@ -64,13 +63,13 @@ function nGram(n) {
     };
 }
 
-/**
+/*
  * Export `n-gram`.
  */
 
 module.exports = nGram;
 
-/**
+/*
  * Create bigrams from a given value.
  *
  * @example
@@ -83,7 +82,7 @@ module.exports = nGram;
 
 nGram.bigram = nGram(2);
 
-/**
+/*
  * Create trigrams from a given value.
  *
  * @example

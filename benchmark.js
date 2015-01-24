@@ -3,14 +3,14 @@
 var nGram,
     ngram;
 
-/**
+/*
  * Dependencies.
  */
 
 nGram = require('./');
 ngram = require('ngram');
 
-/**
+/*
  * Fixtures.
  */
 
