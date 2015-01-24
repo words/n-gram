@@ -28,6 +28,15 @@ $ bower install n-gram
 var nGram = require('wooorm/n-gram');
 ```
 
+UMD (globals/AMD/CommonJS) ([uncompressed](n-gram.js) and [compressed](n-gram.min.js):
+
+```html
+<script src="path/to/n-gram.js"></script>
+<script>
+  nGram.bigram('n-gram'); // ['n-', '-g', 'gr', 'ra', 'am']
+</script>
+```
+
 ## Usage
 
 ```javascript
