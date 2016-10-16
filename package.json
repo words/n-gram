@@ -13,38 +13,49 @@
     "bigram",
     "trigram"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wooorm/n-gram.git"
-  },
-  "author": "Titus Wormer <tituswormer@gmail.com>",
+  "repository": "https://github.com/wooorm/n-gram",
+  "bugs": "https://github.com/wooorm/n-gram/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
   "devDependencies": {
-    "browserify": "^8.0.0",
-    "eslint": "^0.12.0",
+    "browserify": "^13.0.0",
     "esmangle": "^1.0.0",
-    "istanbul": "^0.3.0",
-    "jscs": "^1.0.0",
-    "jscs-jsdoc": "^0.4.0",
-    "matcha": "^0.6.0",
-    "mocha": "^2.0.0",
-    "ngram": "madbence/node-ngram"
+    "nyc": "^8.3.1",
+    "remark-cli": "^2.0.0",
+    "remark-preset-wooorm": "^1.0.0",
+    "tape": "^4.0.0",
+    "xo": "^0.17.0"
   },
   "scripts": {
-    "test-api": "_mocha --check-leaks test.js",
-    "test-coveralls": "istanbul cover _mocha --report lcovonly -- --check-leaks test.js",
-    "test-coverage": "istanbul cover _mocha -- test.js",
-    "test-travis": "npm run test-coveralls",
-    "test": "npm run test-api",
-    "lint-api": "eslint index.js",
-    "lint-test": "eslint --env mocha test.js",
-    "lint-benchmark": "eslint --global set,suite,bench benchmark.js",
-    "lint-style": "jscs --reporter inline index.js test.js benchmark.js",
-    "lint": "npm run lint-api && npm run lint-test && npm run lint-benchmark && npm run lint-style",
-    "make": "npm run lint && npm run test-coverage",
-    "benchmark": "matcha benchmark.js",
-    "bundle": "browserify index.js -s nGram > n-gram.js",
-    "postbundle": "esmangle n-gram.js > n-gram.min.js",
-    "build": "npm run bundle",
-    "prepublish": "npm run build"
+    "build-md": "remark . --quiet --frail",
+    "build-bundle": "browserify index.js --bare -s nGram > n-gram.js",
+    "build-mangle": "esmangle n-gram.js > n-gram.min.js",
+    "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+    "lint": "xo",
+    "test-api": "node test.js",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run build && npm run lint && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "xo": {
+    "space": true,
+    "ignores": [
+      "n-gram.js"
+    ]
+  },
+  "remarkConfig": {
+    "output": true,
+    "presets": "wooorm"
   }
 }

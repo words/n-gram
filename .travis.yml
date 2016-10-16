@@ -1,13 +1,23 @@
 language: node_js
-script: npm run-script test-travis
 node_js:
-- '0.10'
-- '0.11'
-after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+- '4.0'
+- '5.0'
+- '6.0'
+after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
-  provider: npm
-  email: tituswormer@gmail.com
-  api_key:
-    secure: GG79c4r3MOI9a3VcuqzrWjvzdoa+0eo6CpLL16b9jYOX/dPa3HCzqYSgi4u/gvlzkBnGfDOu2hAozAy3uyAe/cMAik7brdOaD61ChhBY3JKG2w8yNbIuyqOaRhEF3OdVf3p/abXW+gUVb7b85OqqXgx21xJ8r5KEScF1oK29aDg=
-  on:
-    repo: wooorm/n-gram
+  - provider: npm
+    email: tituswormer@gmail.com
+    api_key:
+      secure: c7XHs/+lCEmhU6aRYWxOowMvXVGBquVbsZZRAYx3GUWkzykdGhAx5Xa5E2VPpp41IJJHdcL+DKDJcmPB8JqwVDaOYULSRxkQ3iqp6xrNxWWL432BqSJ49k3SgwhBXHlDqfLnuSozjTcUQdH+7DqHuEr5Y2WLXWM+zVvG3elqBjc=
+    on:
+      tags: true
+      node: '5.0'
+  - provider: releases
+    api_key:
+      secure: noUIecwDWijqjbyGZdGtNPZ+1dA0JNgFaRvR1acBdg365euuIl3DBmKog6Xe7vflFBx5Rsl+9vBfxFd4j3d5U+N1N1IWKTBjv3DkHvWo03Eza7LBS0+9iYXb91Vlfsnhwwmr48d+8OoFl0QEYmqzqbLIQMYb5J9drPWv5HzNP7o=
+    file:
+      - "n-gram.js"
+      - "n-gram.min.js"
+    on:
+      tags: true
+      node: '6.0'
