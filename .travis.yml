@@ -1,8 +1,7 @@
 language: node_js
 node_js:
 - '4.0'
-- '5.0'
-- '6.0'
+- '7.0'
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   - provider: npm
@@ -11,7 +10,7 @@ deploy:
       secure: c7XHs/+lCEmhU6aRYWxOowMvXVGBquVbsZZRAYx3GUWkzykdGhAx5Xa5E2VPpp41IJJHdcL+DKDJcmPB8JqwVDaOYULSRxkQ3iqp6xrNxWWL432BqSJ49k3SgwhBXHlDqfLnuSozjTcUQdH+7DqHuEr5Y2WLXWM+zVvG3elqBjc=
     on:
       tags: true
-      node: '5.0'
+      node: '4.0'
   - provider: releases
     api_key:
       secure: noUIecwDWijqjbyGZdGtNPZ+1dA0JNgFaRvR1acBdg365euuIl3DBmKog6Xe7vflFBx5Rsl+9vBfxFd4j3d5U+N1N1IWKTBjv3DkHvWo03Eza7LBS0+9iYXb91Vlfsnhwwmr48d+8OoFl0QEYmqzqbLIQMYb5J9drPWv5HzNP7o=
@@ -20,4 +19,4 @@ deploy:
       - "n-gram.min.js"
     on:
       tags: true
-      node: '6.0'
+      node: '7.0'
