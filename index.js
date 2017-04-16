@@ -1,10 +1,10 @@
 'use strict';
 
 /* Expose. */
-module.exports = exports = nGram;
+module.exports = nGram;
 
-exports.bigram = nGram(2);
-exports.trigram = nGram(3);
+nGram.bigram = nGram(2);
+nGram.trigram = nGram(3);
 
 /* Factory returning a function that converts a given string
  * to n-grams. */
