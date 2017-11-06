@@ -14,7 +14,7 @@ deploy:
   - provider: releases
     skip_cleanup: true
     api_key:
-      secure: noUIecwDWijqjbyGZdGtNPZ+1dA0JNgFaRvR1acBdg365euuIl3DBmKog6Xe7vflFBx5Rsl+9vBfxFd4j3d5U+N1N1IWKTBjv3DkHvWo03Eza7LBS0+9iYXb91Vlfsnhwwmr48d+8OoFl0QEYmqzqbLIQMYb5J9drPWv5HzNP7o=
+      secure: cM5fFP+l+P6qyjcuJixYUvmYdbqGR1h8PeFmsCsEedWphG1k311Ur0rqCN9qSWNXH88Grc4wTpp+35z5CjqINTmuTFunjYII/CHnNdtBhF3o8EsIY4Qf2Kw2Rslm2BjlhinMjLLY8Zc0AVim2KB9BhzLrKeOTS2hYm+yRHe76/k=
     file:
       - "n-gram.js"
       - "n-gram.min.js"
