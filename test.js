@@ -1,10 +1,8 @@
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var nGram = require('./');
 
-/* Tests. */
 test('nGram', function (t) {
   var fixtures = {
     '`0`': 0,

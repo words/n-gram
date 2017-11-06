@@ -1,6 +1,5 @@
 'use strict';
 
-/* Expose. */
 module.exports = nGram;
 
 nGram.bigram = nGram(2);
