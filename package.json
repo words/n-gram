@@ -13,8 +13,8 @@
     "bigram",
     "trigram"
   ],
-  "repository": "https://github.com/wooorm/n-gram",
-  "bugs": "https://github.com/wooorm/n-gram/issues",
+  "repository": "https://github.com/words/n-gram",
+  "bugs": "https://github.com/words/n-gram/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
@@ -56,6 +56,8 @@
     ]
   },
   "remarkConfig": {
-    "plugins": ["preset-wooorm"]
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }

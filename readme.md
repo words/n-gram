@@ -46,13 +46,13 @@ Shortcut for `nGram(3)`.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/n-gram.svg
+[travis-badge]: https://img.shields.io/travis/words/n-gram.svg
 
-[travis]: https://travis-ci.org/wooorm/n-gram
+[travis]: https://travis-ci.org/words/n-gram
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/n-gram.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/words/n-gram.svg
 
-[codecov]: https://codecov.io/github/wooorm/n-gram
+[codecov]: https://codecov.io/github/words/n-gram
 
 [npm]: https://docs.npmjs.com/cli/install
 
