@@ -22,13 +22,16 @@ nGram.trigram('n-gram'); // ['n-g', '-gr', 'gra', 'ram']
 
 nGram(6)('n-gram'); // ['n-gram']
 nGram(7)('n-gram'); // []
+
+// Anything with a `.length` and `.slice` works: arrays too.
+nGram.bigram(['alpha', 'bravo', 'charlie']); // [['alpha', 'bravo'], ['bravo', 'charlie']]
 ```
 
 ## API
 
 ### `nGram(n)`
 
-Factory returning a function that converts a given string to n-grams.
+Factory returning a function that converts a given value to n-grams.
 
 Want padding?  Use something like the following: `nGram(2)(' ' + value + ' ');`
 

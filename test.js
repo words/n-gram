@@ -25,8 +25,28 @@ test('nGram', function (t) {
     );
   });
 
-  t.test('n-gram(1)', function (st) {
+  t.test('nGram(1) # unigram', function (st) {
     var unigrams = nGram(1);
+
+    var values = {
+      '`0`': [0, '0'],
+      'negative numbers': [-1, '-', '1'],
+      'negative numbers (2)': [-Infinity, '-', 'I', 'n', 'f', 'i', 'n', 'i', 't', 'y'],
+      'non-numbers': [true, 't', 'r', 'u', 'e'],
+      'non-numbers (2)': ['5', '5'],
+      'non-numbers (3)': [NaN, 'N', 'a', 'N'],
+      '`Infinity`': [Infinity, 'I', 'n', 'f', 'i', 'n', 'i', 't', 'y']
+    };
+
+    Object.keys(values).forEach(function (name) {
+      var value = values[name];
+
+      st.deepEqual(
+        unigrams(value[0]),
+        value.slice(1),
+        'should return strings'
+      );
+    });
 
     st.equal(typeof unigrams, 'function', 'should be a function');
 
@@ -56,10 +76,34 @@ test('nGram', function (t) {
       'should return two n-grams when two characters are given'
     );
 
+    st.deepEqual(
+      unigrams(['alpha', 'bravo', 'charlie']),
+      [['alpha'], ['bravo'], ['charlie']],
+      'should support an array'
+    );
+
+    st.deepEqual(
+      unigrams([]),
+      [],
+      'should return no n-grams when an empty array is given'
+    );
+
+    st.deepEqual(
+      unigrams(['alpha']),
+      [['alpha']],
+      'should return one n-gram when an array with one value is given'
+    );
+
+    st.deepEqual(
+      unigrams(['alpha', 'bravo']),
+      [['alpha'], ['bravo']],
+      'should return two n-grams when an array with two values is given'
+    );
+
     st.end();
   });
 
-  t.test('n-gram(2)', function (st) {
+  t.test('nGram(2) # bigram', function (st) {
     var bigrams = nGram(2);
 
     st.equal(typeof bigrams, 'function', 'should be a function');
@@ -90,10 +134,34 @@ test('nGram', function (t) {
       'should return one n-gram when two characters are given'
     );
 
+    st.deepEqual(
+      bigrams(['alpha', 'bravo', 'charlie']),
+      [['alpha', 'bravo'], ['bravo', 'charlie']],
+      'should support an array'
+    );
+
+    st.deepEqual(
+      bigrams([]),
+      [],
+      'should return no n-grams when an empty array is given'
+    );
+
+    st.deepEqual(
+      bigrams(['alpha']),
+      [],
+      'should return no n-grams when an array with one value is given'
+    );
+
+    st.deepEqual(
+      bigrams(['alpha', 'bravo']),
+      [['alpha', 'bravo']],
+      'should return one n-gram when an array with two values is given'
+    );
+
     st.end();
   });
 
-  t.test('n-gram(3)', function (st) {
+  t.test('nGram(3) # trigram', function (st) {
     var trigrams = nGram(3);
 
     st.equal(typeof trigrams, 'function', 'should be a function');
@@ -127,13 +195,43 @@ test('nGram', function (t) {
     st.deepEqual(
       trigrams('abc'),
       ['abc'],
-      'should return one n-grams when three characters are given'
+      'should return one n-gram when three characters are given'
+    );
+
+    st.deepEqual(
+      trigrams(['alpha', 'bravo', 'charlie', 'delta']),
+      [['alpha', 'bravo', 'charlie'], ['bravo', 'charlie', 'delta']],
+      'should support an array'
+    );
+
+    st.deepEqual(
+      trigrams([]),
+      [],
+      'should return no n-grams when an empty array is given'
+    );
+
+    st.deepEqual(
+      trigrams(['alpha']),
+      [],
+      'should return no n-grams when an array with one value is given'
+    );
+
+    st.deepEqual(
+      trigrams(['alpha', 'bravo']),
+      [],
+      'should return no n-grams when an array with two values is given'
+    );
+
+    st.deepEqual(
+      trigrams(['alpha', 'bravo', 'charlie']),
+      [['alpha', 'bravo', 'charlie']],
+      'should return one n-gram when an array with three values is given'
     );
 
     st.end();
   });
 
-  t.test('n-gram(10)', function (st) {
+  t.test('nGram(10) # decagram', function (st) {
     var decagrams = nGram(10);
 
     st.equal(typeof decagrams, 'function', 'should be a function');
@@ -162,6 +260,39 @@ test('nGram', function (t) {
       decagrams('testtestte'),
       ['testtestte'],
       'should return one n-gram when ten characters are given'
+    );
+
+    st.deepEqual(
+      decagrams(['alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india', 'juliett', 'kilo']),
+      [
+        ['alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india', 'juliett'],
+        ['bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india', 'juliett', 'kilo']
+      ],
+      'should return arrays of strings'
+    );
+
+    st.deepEqual(
+      decagrams([]),
+      [],
+      'should return no n-grams when an empty array is given'
+    );
+
+    st.deepEqual(
+      decagrams(['alpha']),
+      [],
+      'should return no n-grams when an array with one value is given'
+    );
+
+    st.deepEqual(
+      decagrams(['alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india']),
+      [],
+      'should return no n-grams when an array with nine values is given'
+    );
+
+    st.deepEqual(
+      decagrams(['alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india', 'juliett']),
+      [['alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india', 'juliett']],
+      'should return one n-gram when an array with ten values is given'
     );
 
     st.end();
