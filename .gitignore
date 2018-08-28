@@ -5,3 +5,4 @@ coverage/
 node_modules/
 n-gram.js
 n-gram.min.js
+yarn.lock
