@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var nGram = require('./');
+var nGram = require('.');
 
 test('nGram', function (t) {
   var fixtures = {
