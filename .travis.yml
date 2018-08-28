@@ -4,20 +4,13 @@ node_js:
 - '9.0'
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
-  - provider: npm
-    email: tituswormer@gmail.com
-    api_key:
-      secure: c7XHs/+lCEmhU6aRYWxOowMvXVGBquVbsZZRAYx3GUWkzykdGhAx5Xa5E2VPpp41IJJHdcL+DKDJcmPB8JqwVDaOYULSRxkQ3iqp6xrNxWWL432BqSJ49k3SgwhBXHlDqfLnuSozjTcUQdH+7DqHuEr5Y2WLXWM+zVvG3elqBjc=
-    on:
-      tags: true
-      node: '4.0'
-  - provider: releases
-    skip_cleanup: true
-    api_key:
-      secure: cM5fFP+l+P6qyjcuJixYUvmYdbqGR1h8PeFmsCsEedWphG1k311Ur0rqCN9qSWNXH88Grc4wTpp+35z5CjqINTmuTFunjYII/CHnNdtBhF3o8EsIY4Qf2Kw2Rslm2BjlhinMjLLY8Zc0AVim2KB9BhzLrKeOTS2hYm+yRHe76/k=
-    file:
-      - "n-gram.js"
-      - "n-gram.min.js"
-    on:
-      tags: true
-      node: '9.0'
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: cM5fFP+l+P6qyjcuJixYUvmYdbqGR1h8PeFmsCsEedWphG1k311Ur0rqCN9qSWNXH88Grc4wTpp+35z5CjqINTmuTFunjYII/CHnNdtBhF3o8EsIY4Qf2Kw2Rslm2BjlhinMjLLY8Zc0AVim2KB9BhzLrKeOTS2hYm+yRHe76/k=
+  file:
+    - "n-gram.js"
+    - "n-gram.min.js"
+  on:
+    tags: true
+    node: '9.0'
