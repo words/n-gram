@@ -13,11 +13,12 @@
     "bigram",
     "trigram"
   ],
-  "repository": "https://github.com/words/n-gram",
+  "repository": "words/n-gram",
   "bugs": "https://github.com/words/n-gram/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+    "Matt Fletcher <mattflet@gmail.com>"
   ],
   "files": [
     "index.js"
