@@ -13,18 +13,18 @@ npm install n-gram
 ## Usage
 
 ```js
-var nGram = require('n-gram');
+var nGram = require('n-gram')
 
-nGram.bigram('n-gram'); // ['n-', '-g', 'gr', 'ra', 'am']
-nGram(2)('n-gram'); // ['n-', '-g', 'gr', 'ra', 'am']
+nGram.bigram('n-gram') // ['n-', '-g', 'gr', 'ra', 'am']
+nGram(2)('n-gram') // ['n-', '-g', 'gr', 'ra', 'am']
 
-nGram.trigram('n-gram'); // ['n-g', '-gr', 'gra', 'ram']
+nGram.trigram('n-gram') // ['n-g', '-gr', 'gra', 'ram']
 
-nGram(6)('n-gram'); // ['n-gram']
-nGram(7)('n-gram'); // []
+nGram(6)('n-gram') // ['n-gram']
+nGram(7)('n-gram') // []
 
 // Anything with a `.length` and `.slice` works: arrays too.
-nGram.bigram(['alpha', 'bravo', 'charlie']); // [['alpha', 'bravo'], ['bravo', 'charlie']]
+nGram.bigram(['alpha', 'bravo', 'charlie']) // [['alpha', 'bravo'], ['bravo', 'charlie']]
 ```
 
 ## API
