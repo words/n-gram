@@ -33,7 +33,7 @@ function nGram(n) {
     }
 
     while (index--) {
-      nGrams[index] = Array.isArray(value) ? value.slice(index, index + n) : value.substr(index, n);
+      nGrams[index] = value.slice(index, index + n);
     }
 
     return nGrams;
