@@ -23,7 +23,9 @@ function nGram(n) {
       return nGrams;
     }
 
-    value = String(value);
+    if (!Array.isArray(value)) {
+      value = String(value);
+    }
     index = value.length - n + 1;
 
     if (index < 1) {
@@ -31,7 +33,7 @@ function nGram(n) {
     }
 
     while (index--) {
-      nGrams[index] = value.substr(index, n);
+      nGrams[index] = value.slice(index, index + n);
     }
 
     return nGrams;
