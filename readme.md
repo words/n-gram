@@ -1,4 +1,9 @@
-# n-gram [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# n-gram
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 Get [n-grams][wiki] in JavaScript.
 
@@ -49,13 +54,21 @@ Shortcut for `nGram(3)`.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/words/n-gram.svg
+[build-badge]: https://img.shields.io/travis/words/n-gram.svg
 
-[travis]: https://travis-ci.org/words/n-gram
+[build]: https://travis-ci.org/words/n-gram
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/words/n-gram.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/words/n-gram.svg
 
-[codecov]: https://codecov.io/github/words/n-gram
+[coverage]: https://codecov.io/github/words/n-gram
+
+[downloads-badge]: https://img.shields.io/npm/dm/n-gram.svg
+
+[downloads]: https://www.npmjs.com/package/n-gram
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/n-gram.svg
+
+[size]: https://bundlephobia.com/result?p=n-gram
 
 [npm]: https://docs.npmjs.com/cli/install
 
