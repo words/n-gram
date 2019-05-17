@@ -61,6 +61,6 @@ Shortcut for `nGram(3)`.
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
-[wiki]: http://en.wikipedia.org/wiki/N-gram
+[wiki]: https://en.wikipedia.org/wiki/N-gram
