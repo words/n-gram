@@ -5,17 +5,17 @@
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
-Get [n-grams][wiki] in JavaScript.
+Get [n-grams][wiki].
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install n-gram
 ```
 
-## Usage
+## Use
 
 ```js
 var nGram = require('n-gram')
@@ -38,7 +38,8 @@ nGram.bigram(['alpha', 'bravo', 'charlie']) // [['alpha', 'bravo'], ['bravo', 'c
 
 Factory returning a function that converts a given value to n-grams.
 
-Want padding?  Use something like the following: `nGram(2)(' ' + value + ' ');`
+Want padding?
+Use something like the following: `nGram(2)(' ' + value + ' ');`
 
 ### `nGram.bigram(value)`
 
