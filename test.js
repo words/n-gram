@@ -127,7 +127,10 @@ test('nGram', function(t) {
 
     st.deepEqual(
       bigrams(['alpha', 'bravo', 'charlie']),
-      [['alpha', 'bravo'], ['bravo', 'charlie']],
+      [
+        ['alpha', 'bravo'],
+        ['bravo', 'charlie']
+      ],
       'should support an array'
     )
 
@@ -187,7 +190,10 @@ test('nGram', function(t) {
 
     st.deepEqual(
       trigrams(['alpha', 'bravo', 'charlie', 'delta']),
-      [['alpha', 'bravo', 'charlie'], ['bravo', 'charlie', 'delta']],
+      [
+        ['alpha', 'bravo', 'charlie'],
+        ['bravo', 'charlie', 'delta']
+      ],
       'should support an array'
     )
 
