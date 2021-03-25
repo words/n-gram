@@ -1,7 +1,5 @@
-'use strict'
-
-var test = require('tape')
-var nGram = require('.')
+import test from 'tape'
+import {nGram} from './index.js'
 
 var own = {}.hasOwnProperty
 
@@ -24,7 +22,9 @@ test('nGram', function (t) {
           nGram(fixtures[name])
         },
         new RegExp(
-          '^Error: `' + fixtures[name] + '` is not a valid argument for n-gram$'
+          '^Error: `' +
+            fixtures[name] +
+            '` is not a valid argument for `n-gram`$'
         ),
         'should fail when given ' + name
       )

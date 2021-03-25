@@ -1,19 +1,15 @@
-'use strict'
-
-module.exports = nGram
-
-nGram.bigram = nGram(2)
-nGram.trigram = nGram(3)
+export var bigram = nGram(2)
+export var trigram = nGram(3)
 
 // Factory returning a function that converts a value string to n-grams.
-function nGram(n) {
+export function nGram(n) {
   if (
     typeof n !== 'number' ||
     Number.isNaN(n) ||
     n < 1 ||
     n === Number.POSITIVE_INFINITY
   ) {
-    throw new Error('`' + n + '` is not a valid argument for n-gram')
+    throw new Error('`' + n + '` is not a valid argument for `n-gram`')
   }
 
   return grams

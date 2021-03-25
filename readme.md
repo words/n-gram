@@ -9,6 +9,9 @@ Get [n-grams][wiki].
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -18,34 +21,37 @@ npm install n-gram
 ## Use
 
 ```js
-var nGram = require('n-gram')
+import {bigram, trigram, nGram} = require('n-gram')
 
-nGram.bigram('n-gram') // ['n-', '-g', 'gr', 'ra', 'am']
+bigram('n-gram') // ['n-', '-g', 'gr', 'ra', 'am']
 nGram(2)('n-gram') // ['n-', '-g', 'gr', 'ra', 'am']
 
-nGram.trigram('n-gram') // ['n-g', '-gr', 'gra', 'ram']
+trigram('n-gram') // ['n-g', '-gr', 'gra', 'ram']
 
 nGram(6)('n-gram') // ['n-gram']
 nGram(7)('n-gram') // []
 
 // Anything with a `.length` and `.slice` works: arrays too.
-nGram.bigram(['alpha', 'bravo', 'charlie']) // [['alpha', 'bravo'], ['bravo', 'charlie']]
+bigram(['alpha', 'bravo', 'charlie']) // [['alpha', 'bravo'], ['bravo', 'charlie']]
 ```
 
 ## API
 
+This package exports the following identifiers: `ngram`, `bigram`, and `trigram`.
+There is no default export.
+
 ### `nGram(n)`
 
-Factory returning a function that converts a given value to n-grams.
+Create a function that converts a given value to n-grams.
 
 Want padding?
 Use something like the following: `nGram(2)(' ' + value + ' ');`
 
-### `nGram.bigram(value)`
+### `bigram(value)`
 
 Shortcut for `nGram(2)`.
 
-### `nGram.trigram(value)`
+### `trigram(value)`
 
 Shortcut for `nGram(3)`.
 
