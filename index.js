@@ -1,7 +1,11 @@
 export var bigram = nGram(2)
 export var trigram = nGram(3)
 
-// Factory returning a function that converts a value string to n-grams.
+/**
+ * Factory returning a function that converts a value string to n-grams.
+ *
+ * @param {number} n
+ */
 export function nGram(n) {
   if (
     typeof n !== 'number' ||
@@ -14,24 +18,32 @@ export function nGram(n) {
 
   return grams
 
-  // Create n-grams from a given value.
+  /**
+   * Create n-grams from a given value.
+   *
+   * @param {string|string[]} [value]
+   */
   function grams(value) {
+    /** @type {(typeof value)[]} */
     var nGrams = []
+    /** @type {number} */
     var index
+    /** @type {typeof value} */
+    var source
 
     if (value === null || value === undefined) {
       return nGrams
     }
 
-    value = value.slice ? value : String(value)
-    index = value.length - n + 1
+    source = value.slice ? value : String(value)
+    index = source.length - n + 1
 
     if (index < 1) {
       return nGrams
     }
 
     while (index--) {
-      nGrams[index] = value.slice(index, index + n)
+      nGrams[index] = source.slice(index, index + n)
     }
 
     return nGrams

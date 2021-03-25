@@ -1,68 +1,90 @@
 import test from 'tape'
 import {nGram} from './index.js'
 
-var own = {}.hasOwnProperty
-
 test('nGram', function (t) {
-  var fixtures = {
-    '`0`': 0,
-    'negative numbers': -1,
-    'negative numbers (2)': Number.NEGATIVE_INFINITY,
-    'non-numbers': true,
-    'non-numbers (2)': '5',
-    'non-numbers (3)': Number.NaN,
-    '`Infinity`': Number.POSITIVE_INFINITY
-  }
-  var name
+  t.throws(
+    function () {
+      nGram(0)
+    },
+    /^Error: `0` is not a valid argument for `n-gram`$/,
+    'should fail when given `0`'
+  )
 
-  for (name in fixtures) {
-    if (own.call(fixtures, name)) {
-      t.throws(
-        function () {
-          nGram(fixtures[name])
-        },
-        new RegExp(
-          '^Error: `' +
-            fixtures[name] +
-            '` is not a valid argument for `n-gram`$'
-        ),
-        'should fail when given ' + name
-      )
-    }
-  }
+  t.throws(
+    function () {
+      nGram(-1)
+    },
+    /^Error: `-1` is not a valid argument for `n-gram`$/,
+    'should fail when given `-1`'
+  )
+
+  t.throws(
+    function () {
+      nGram(Number.NEGATIVE_INFINITY)
+    },
+    /^Error: `-Infinity` is not a valid argument for `n-gram`$/,
+    'should fail when given `Number.NEGATIVE_INFINITY`'
+  )
+
+  t.throws(
+    function () {
+      // @ts-ignore
+      nGram(true)
+    },
+    /^Error: `true` is not a valid argument for `n-gram`$/,
+    'should fail when given `true`'
+  )
+
+  t.throws(
+    function () {
+      // @ts-ignore
+      nGram('5')
+    },
+    /^Error: `5` is not a valid argument for `n-gram`$/,
+    "should fail when given `'5'`"
+  )
+
+  t.throws(
+    function () {
+      nGram(Number.NaN)
+    },
+    /^Error: `NaN` is not a valid argument for `n-gram`$/,
+    'should fail when given `Number.NaN`'
+  )
+
+  t.throws(
+    function () {
+      nGram(Number.POSITIVE_INFINITY)
+    },
+    /^Error: `Infinity` is not a valid argument for `n-gram`$/,
+    'should fail when given `Number.POSITIVE_INFINITY`'
+  )
 
   t.test('nGram(1) # unigram', function (st) {
     var unigrams = nGram(1)
-
-    var values = {
-      '`0`': [0, '0'],
-      'negative numbers': [-1, '-', '1'],
-      'non-numbers': [true, 't', 'r', 'u', 'e'],
-      'non-numbers (2)': ['5', '5'],
-      'non-numbers (3)': [Number.NaN, 'N', 'a', 'N'],
-      '`Infinity`': [
-        Number.POSITIVE_INFINITY,
-        'I',
-        'n',
-        'f',
-        'i',
-        'n',
-        'i',
-        't',
-        'y'
-      ]
-    }
-    var name
-
-    for (name in values) {
-      if (own.call(values, name)) {
-        st.deepEqual(
-          unigrams(values[name][0]),
-          values[name].slice(1),
-          'should return strings'
-        )
-      }
-    }
+    // @ts-ignore
+    st.deepEqual(unigrams(0), ['0'], 'should return strings (#1)')
+    // @ts-ignore
+    st.deepEqual(unigrams(-1), ['-', '1'], 'should return strings (#2)')
+    st.deepEqual(
+      // @ts-ignore
+      unigrams(true),
+      ['t', 'r', 'u', 'e'],
+      'should return strings (#3)'
+    )
+    st.deepEqual(unigrams('5'), ['5'], 'should return strings (#4)')
+    st.deepEqual(
+      // @ts-ignore
+      unigrams(Number.NaN),
+      ['N', 'a', 'N'],
+      'should return strings (#5)'
+    )
+    st.deepEqual(
+      // @ts-ignore
+      unigrams(Number.POSITIVE_INFINITY),
+      ['I', 'n', 'f', 'i', 'n', 'i', 't', 'y'],
+      'should return strings (#6)'
+    )
 
     st.equal(typeof unigrams, 'function', 'should be a function')
 
