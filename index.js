@@ -21,14 +21,16 @@ export function nGram(n) {
   /**
    * Create n-grams from a given value.
    *
-   * @param {string|string[]} [value]
+   * @template {string|string[]} T
+   * @param {T} [value]
+   * @returns {T[]}
    */
   function grams(value) {
-    /** @type {(typeof value)[]} */
+    /** @type {T[]} */
     var nGrams = []
     /** @type {number} */
     var index
-    /** @type {typeof value} */
+    /** @type {string|string[]} */
     var source
 
     if (value === null || value === undefined) {
@@ -43,6 +45,7 @@ export function nGram(n) {
     }
 
     while (index--) {
+      // @ts-ignore
       nGrams[index] = source.slice(index, index + n)
     }
 
