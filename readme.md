@@ -21,7 +21,7 @@ npm install n-gram
 ## Use
 
 ```js
-import {bigram, trigram, nGram} = require('n-gram')
+import {bigram, trigram, nGram} from 'n-gram'
 
 bigram('n-gram') // ['n-', '-g', 'gr', 'ra', 'am']
 nGram(2)('n-gram') // ['n-', '-g', 'gr', 'ra', 'am']
@@ -45,7 +45,7 @@ There is no default export.
 Create a function that converts a given value to n-grams.
 
 Want padding?
-Use something like the following: `nGram(2)(' ' + value + ' ');`
+Use something like the following: `nGram(2)(' ' + value + ' ')`
 
 ### `bigram(value)`
 
