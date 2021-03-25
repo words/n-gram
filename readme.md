@@ -55,9 +55,9 @@ Shortcut for `nGram(3)`.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/words/n-gram.svg
+[build-badge]: https://github.com/words/n-gram/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/words/n-gram
+[build]: https://github.com/words/n-gram/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/words/n-gram.svg
 
