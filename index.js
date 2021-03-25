@@ -7,7 +7,12 @@ nGram.trigram = nGram(3)
 
 // Factory returning a function that converts a value string to n-grams.
 function nGram(n) {
-  if (typeof n !== 'number' || isNaN(n) || n < 1 || n === Infinity) {
+  if (
+    typeof n !== 'number' ||
+    Number.isNaN(n) ||
+    n < 1 ||
+    n === Number.POSITIVE_INFINITY
+  ) {
     throw new Error('`' + n + '` is not a valid argument for n-gram')
   }
 

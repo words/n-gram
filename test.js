@@ -3,30 +3,35 @@
 var test = require('tape')
 var nGram = require('.')
 
-test('nGram', function(t) {
+var own = {}.hasOwnProperty
+
+test('nGram', function (t) {
   var fixtures = {
     '`0`': 0,
     'negative numbers': -1,
-    'negative numbers (2)': -Infinity,
+    'negative numbers (2)': Number.NEGATIVE_INFINITY,
     'non-numbers': true,
     'non-numbers (2)': '5',
-    'non-numbers (3)': NaN,
-    '`Infinity`': Infinity
+    'non-numbers (3)': Number.NaN,
+    '`Infinity`': Number.POSITIVE_INFINITY
+  }
+  var name
+
+  for (name in fixtures) {
+    if (own.call(fixtures, name)) {
+      t.throws(
+        function () {
+          nGram(fixtures[name])
+        },
+        new RegExp(
+          '^Error: `' + fixtures[name] + '` is not a valid argument for n-gram$'
+        ),
+        'should fail when given ' + name
+      )
+    }
   }
 
-  Object.keys(fixtures).forEach(function(name) {
-    var value = fixtures[name]
-
-    t.throws(
-      function() {
-        nGram(value)
-      },
-      new RegExp('^Error: `' + value + '` is not a valid argument for n-gram$'),
-      'should fail when given ' + name
-    )
-  })
-
-  t.test('nGram(1) # unigram', function(st) {
+  t.test('nGram(1) # unigram', function (st) {
     var unigrams = nGram(1)
 
     var values = {
@@ -34,14 +39,30 @@ test('nGram', function(t) {
       'negative numbers': [-1, '-', '1'],
       'non-numbers': [true, 't', 'r', 'u', 'e'],
       'non-numbers (2)': ['5', '5'],
-      'non-numbers (3)': [NaN, 'N', 'a', 'N'],
-      '`Infinity`': [Infinity, 'I', 'n', 'f', 'i', 'n', 'i', 't', 'y']
+      'non-numbers (3)': [Number.NaN, 'N', 'a', 'N'],
+      '`Infinity`': [
+        Number.POSITIVE_INFINITY,
+        'I',
+        'n',
+        'f',
+        'i',
+        'n',
+        'i',
+        't',
+        'y'
+      ]
     }
+    var name
 
-    Object.keys(values).forEach(function(name) {
-      var value = values[name]
-      st.deepEqual(unigrams(value[0]), value.slice(1), 'should return strings')
-    })
+    for (name in values) {
+      if (own.call(values, name)) {
+        st.deepEqual(
+          unigrams(values[name][0]),
+          values[name].slice(1),
+          'should return strings'
+        )
+      }
+    }
 
     st.equal(typeof unigrams, 'function', 'should be a function')
 
@@ -98,7 +119,7 @@ test('nGram', function(t) {
     st.end()
   })
 
-  t.test('nGram(2) # bigram', function(st) {
+  t.test('nGram(2) # bigram', function (st) {
     var bigrams = nGram(2)
 
     st.equal(typeof bigrams, 'function', 'should be a function')
@@ -155,7 +176,7 @@ test('nGram', function(t) {
     st.end()
   })
 
-  t.test('nGram(3) # trigram', function(st) {
+  t.test('nGram(3) # trigram', function (st) {
     var trigrams = nGram(3)
 
     st.equal(typeof trigrams, 'function', 'should be a function')
@@ -224,7 +245,7 @@ test('nGram', function(t) {
     st.end()
   })
 
-  t.test('nGram(10) # decagram', function(st) {
+  t.test('nGram(10) # decagram', function (st) {
     var decagrams = nGram(10)
     var values = [
       'alpha',
