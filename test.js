@@ -61,7 +61,7 @@ test('nGram', function (t) {
   )
 
   t.test('nGram(1) # unigram', function (st) {
-    var unigrams = nGram(1)
+    const unigrams = nGram(1)
     // @ts-ignore
     st.deepEqual(unigrams(0), ['0'], 'should return strings (#1)')
     // @ts-ignore
@@ -142,7 +142,7 @@ test('nGram', function (t) {
   })
 
   t.test('nGram(2) # bigram', function (st) {
-    var bigrams = nGram(2)
+    const bigrams = nGram(2)
 
     st.equal(typeof bigrams, 'function', 'should be a function')
 
@@ -199,7 +199,7 @@ test('nGram', function (t) {
   })
 
   t.test('nGram(3) # trigram', function (st) {
-    var trigrams = nGram(3)
+    const trigrams = nGram(3)
 
     st.equal(typeof trigrams, 'function', 'should be a function')
 
@@ -268,8 +268,8 @@ test('nGram', function (t) {
   })
 
   t.test('nGram(10) # decagram', function (st) {
-    var decagrams = nGram(10)
-    var values = [
+    const decagrams = nGram(10)
+    const values = [
       'alpha',
       'bravo',
       'charlie',

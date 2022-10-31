@@ -1,5 +1,5 @@
-export var bigram = nGram(2)
-export var trigram = nGram(3)
+export const bigram = nGram(2)
+export const trigram = nGram(3)
 
 /**
  * Factory returning a function that converts a value string to n-grams.
@@ -21,31 +21,27 @@ export function nGram(n) {
   /**
    * Create n-grams from a given value.
    *
-   * @template {string|string[]} T
+   * @template {string|Array<unknown>} T
    * @param {T} [value]
-   * @returns {T[]}
+   * @returns {T extends any[] ? T : Array<string>}
    */
   function grams(value) {
-    /** @type {T[]} */
-    var nGrams = []
-    /** @type {number} */
-    var index
-    /** @type {string|string[]} */
-    var source
+    /** @type {T extends any[] ? T : Array<string>} */
+    // @ts-expect-error: pretty sure this is fine.
+    const nGrams = []
 
     if (value === null || value === undefined) {
       return nGrams
     }
 
-    source = value.slice ? value : String(value)
-    index = source.length - n + 1
+    const source = typeof value.slice === 'function' ? value : String(value)
+    let index = source.length - n + 1
 
     if (index < 1) {
       return nGrams
     }
 
     while (index--) {
-      // @ts-ignore
       nGrams[index] = source.slice(index, index + n)
     }
 
