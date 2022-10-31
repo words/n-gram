@@ -7,7 +7,7 @@ jobs:
     name: ${{matrix.node}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: dcodeIO/setup-node-nvm@master
         with:
           node-version: ${{matrix.node}}
