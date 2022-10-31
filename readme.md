@@ -75,7 +75,7 @@ bigram(['alpha', 'bravo', 'charlie']) // [['alpha', 'bravo'], ['bravo', 'charlie
 
 ## API
 
-This package exports the identifiers `ngram`, `bigram`, and `trigram`.
+This package exports the identifiers `nGram`, `bigram`, and `trigram`.
 There is no default export.
 
 ### `nGram(n)`
