@@ -26,7 +26,7 @@ Get [n-grams][wiki].
 
 ## What is this?
 
-This package gets you [bigrams][wiki] (or any n-gram, really).
+This package gets you bigrams, trigrams, all the [n-grams][wiki]!
 
 ## When should I use this?
 
